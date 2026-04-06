@@ -1,0 +1,23 @@
+.platform-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pf-btn {
+  padding: 7px 16px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pf-btn:hover { border-color: var(--border-h); color: var(--text); }
+.pf-btn--active {
+  background: var(--bg3);
+  border-color: var(--border-h);
+  color: var(--text);
+}

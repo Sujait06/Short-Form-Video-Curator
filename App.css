@@ -1,26 +1,9 @@
-body {
-  font-family: Arial;
-  background: #f4f4f4;
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-
-.app {
-  text-align: center;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-.video-card {
-  background: white;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.video-card img {
-  width: 100%;
-  border-radius: 5px;
+.main-content {
+  flex: 1;
+  padding-top: 72px; /* navbar height */
 }

@@ -1,0 +1,51 @@
+.tagbar {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 72px;
+  z-index: 50;
+  padding: 0 24px;
+}
+.tagbar__scroll {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 0;
+  scrollbar-width: none;
+}
+.tagbar__scroll::-webkit-scrollbar { display: none; }
+
+.tag-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.tag-chip:hover {
+  border-color: var(--border-h);
+  color: var(--text);
+  background: var(--bg3);
+}
+.tag-chip--active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.tag-chip--active:hover {
+  background: var(--text);
+  color: var(--bg);
+}

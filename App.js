@@ -1,34 +1,23 @@
-import React, { useState } from "react";
-import axios from "axios";
-import SearchBar from "./SearchBar";
-import VideoCard from "./VideoCard";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Feed from "./pages/Feed";
 import "./App.css";
 
-function App() {
-  const [videos, setVideos] = useState([]);
-
-  const searchVideos = async (tag) => {
-    try {
-      const res = await axios.get(`http://localhost:5000/videos/${tag}`);
-      setVideos(res.data);
-    } catch (error) {
-      console.error("Error fetching videos:", error);
-    }
-  };
-
+export default function App() {
   return (
-    <div className="app">
-      <h1>Short-Form Video Curator</h1>
-
-      <SearchBar onSearch={searchVideos} />
-
-      <div className="video-grid">
-        {videos.map((video, index) => (
-          <VideoCard key={index} video={video} />
-        ))}
+    <BrowserRouter>
+      <div className="app-shell">
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/feed" element={<Feed />} />
+            <Route path="/feed/:tag" element={<Feed />} />
+          </Routes>
+        </main>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
